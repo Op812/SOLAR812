@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar812 | Premium Solar Chargers</title>
+    <style>
+        :root {
+            --black: #000000;
+            --dark-bg: #0A0A0A;
+            --gold: #D4AF37;
+            --light-gold: #F1E5AC;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--black);
+            padding: 20px 0;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--light-gold);
+            margin-left: 10px;
+            letter-spacing: 3px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%230A0A0A" width="100" height="100"/><path fill="%231A1A1A" d="M0 0h100v100H0z"/></svg>');
+            background-size: cover;
+            padding: 100px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--gold);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light-gold);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--light-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--black);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            margin: 15px auto;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--gold);
+        }
+        
+        /* Product Section */
+        .product {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+            text-align: center;
+        }
+        
+        .product-showcase {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        
+        .product-info h3 {
+            font-size: 28px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .product-info ul {
+            list-style-type: none;
+            margin-bottom: 30px;
+        }
+        
+        .product-info li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .product-info li:before {
+            content: '✓';
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+        }
+        
+        .price {
+            font-size: 42px;
+            color: var(--gold);
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        /* Order Form Section */
+        .order {
+            padding: 80px 0;
+            background-color: var(--black);
+        }
+        
+        .order-form {
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--light-gold);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            color: var(--white);
+            font-size: 16px;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .submit-button {
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--light-gold);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        
+        .founder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            border: 3px solid var(--gold);
+        }
+        
+        .founder-initial {
+            font-size: 60px;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--gold);
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info a {
+            color: var(--light-gold);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .contact-info a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            color: var(--light-gold);
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .product-showcase {
+                flex-direction: column;
+            }
+            
+            .order-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <div class="logo-text">Solar812</div>
+                <div class="logo-subtext">INFINITE POWER</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Power Your World Responsibly</h1>
+            <p>Experience the future of portable energy with our premium solar-powered charger. Never run out of power again while helping our planet.</p>
+            <a href="#order" class="cta-button">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Solar812</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">☀️</div>
+                    <h3>Solar Powered</h3>
+                    <p>Harness the sun's infinite energy to charge your devices anywhere, anytime. No electricity needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Charging</h3>
+                    <p>Our advanced technology provides rapid charging that rivals traditional wall chargers.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Eco Friendly</h3>
+                    <p>Reduce your carbon footprint with clean, renewable energy. Help protect our planet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product">
+        <div class="container">
+            <h2 class="section-title">The Solar812 Power-Pod</h2>
+            <div class="product-showcase">
+                <div class="product-image">
+                    <!-- Placeholder for product image -->
+                    <div style="height: 300px; background-color: #1a1a1a; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 20px;">
+                        Solar812 Power-Pod Image
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Solar Charger</h3>
+                    <ul>
+                        <li>High-efficiency solar panels for maximum energy conversion</li>
+                        <li>10,000mAh built-in battery stores power for when you need it</li>
+                        <li>Dual USB ports to charge two devices simultaneously</li>
+                        <li>Water and dust resistant design for all adventures</li>
+                        <li>Compact, lightweight and perfect for travel</li>
+                        <li>Compatible with all smartphones, tablets, and USB devices</li>
+                    </ul>
+                    <div class="price">HKD $149</div>
+                    <a href="#order" class="cta-button">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section id="order" class="order">
+        <div class="container">
+            <h2 class="section-title">Place Your Order</h2>
+            <form class="order-form" id="orderForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select id="quantity" name="quantity" required>
+                        <option value="1">1 Power-Pod</option>
+                        <option value="2">2 Power-Pods</option>
+                        <option value="3">3 Power-Pods</option>
+                        <option value="4">4 Power-Pods</option>
+                        <option value="5">5 Power-Pods</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="color">Color Preference</label>
+                    <select id="color" name="color" required>
+                        <option value="Solar Flare">Solar Flare (Orange)</option>
+                        <option value="Ocean Blue">Ocean Blue</option>
+                        <option value="Forest Green">Forest Green</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Special Requests or Questions</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-button">Complete Order</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Solar812 was founded by 12-year-old Osman Pasha from Hong Kong with a simple mission: to make clean energy accessible to everyone while helping protect our planet.</p>
+                    <p>The name Solar812 represents infinite solar power (8) championed by a 12-year-old innovator. For every Solar812 product sold, we plant a tree to contribute to a greener future.</p>
+                </div>
+                <div class="founder">
+                    <div class="founder-image">
+                        <div class="founder-initial">O</div>
+                    </div>
+                    <h3>Osman Pasha</h3>
+                    <p>Founder, Solar812</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="contact-info">
+                <a href="mailto:pashao1@wis.edu.hk">pashao1@wis.edu.hk</a>
+                <a href="tel:+85290989090">+852 9098 9090</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Solar812 by Osman Pasha. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const quantity = document.getElementById('quantity').value;
+            const color = document.getElementById('color').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email content
+            const subject = `New Solar812 Order from ${name}`;
+            const body = `
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Quantity: ${quantity}
+Color: ${color}
+Message: ${message}
+            `;
+            
+            // Open mail client
+            window.location.href = `mailto:pashao1@wis.edu.hk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Show confirmation message
+            alert('Thank you for your order! Your email client will open to confirm your order details. Please send the pre-filled email to complete your order.');
+        });
+    </script>
+</body>
+</html>
