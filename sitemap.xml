@@ -1,189 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar812 | Sitemap</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --black: #000000;
-            --dark-bg: #0A0A0A;
-            --gold: #D4AF37;
-            --light-gold: #F1E5AC;
-            --dark-gold: #B8860B;
-            --white: #FFFFFF;
-            --gray: #777777;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--dark-bg);
-            color: var(--white);
-            line-height: 1.6;
-            padding: 20px;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            border: 1px solid var(--gold);
-        }
-        
-        h1 {
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 36px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        h2 {
-            color: var(--light-gold);
-            margin: 25px 0 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--dark-gold);
-        }
-        
-        .sitemap-section {
-            margin-bottom: 30px;
-        }
-        
-        .page-list {
-            list-style-type: none;
-        }
-        
-        .page-list li {
-            padding: 10px 15px;
-            margin-bottom: 8px;
-            background-color: rgba(212, 175, 55, 0.1);
-            border-left: 4px solid var(--gold);
-            transition: all 0.3s ease;
-        }
-        
-        .page-list li:hover {
-            background-color: rgba(212, 175, 55, 0.2);
-            transform: translateX(5px);
-        }
-        
-        .page-list a {
-            color: var(--light-gold);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-        }
-        
-        .page-list a:hover {
-            color: var(--gold);
-        }
-        
-        .page-list i {
-            margin-right: 10px;
-            color: var(--gold);
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Solar812 Website Sitemap</h1>
-        
-        <div class="sitemap-section">
-            <h2>Main Pages</h2>
-            <ul class="page-list">
-                <li><a href="index.html#home"><i class="fas fa-home"></i> Homepage</a></li>
-                <li><a href="index.html#features"><i class="fas fa-star"></i> Features</a></li>
-                <li><a href="index.html#product"><i class="fas fa-solar-panel"></i> Product Details</a></li>
-                <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Order Now</a></li>
-                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
-            </ul>
-        </div>
-        
-        <div class="sitemap-section">
-            <h2>Product Information</h2>
-            <ul class="page-list">
-                <li><a href="specifications.html"><i class="fas fa-list-alt"></i> Technical Specifications</a></li>
-                <li><a href="features.html"><i class="fas fa-bolt"></i> Key Features</a></li>
-                <li><a href="gallery.html"><i class="fas fa-images"></i> Product Gallery</a></li>
-                <li><a href="compatibility.html"><i class="fas fa-mobile-alt"></i> Device Compatibility</a></li>
-            </ul>
-        </div>
-        
-        <div class="sitemap-section">
-            <h2>Order Process</h2>
-            <ul class="page-list">
-                <li><a href="order.html"><i class="fas fa-file-alt"></i> Order Form</a></li>
-                <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment Options</a></li>
-                <li><a href="shipping.html"><i class="fas fa-truck"></i> Shipping Information</a></li>
-                <li><a href="delivery.html"><i class="fas fa-calendar-alt"></i> Delivery Times</a></li>
-                <li><a href="returns.html"><i class="fas fa-exchange-alt"></i> Return Policy</a></li>
-            </ul>
-        </div>
-        
-        <div class="sitemap-section">
-            <h2>Company Information</h2>
-            <ul class="page-list">
-                <li><a href="story.html"><i class="fas fa-history"></i> Our Story</a></li>
-                <li><a href="mission.html"><i class="fas fa-bullseye"></i> Our Mission</a></li>
-                <li><a href="founder.html"><i class="fas fa-user"></i> Founder Profile</a></li>
-                <li><a href="values.html"><i class="fas fa-heart"></i> Our Values</a></li>
-            </ul>
-        </div>
-        
-        <div class="sitemap-section">
-            <h2>Support & Contact</h2>
-            <ul class="page-list">
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
-                <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                <li><a href="warranty.html"><i class="fas fa-shield-alt"></i> Warranty Information</a></li>
-                <li><a href="support.html"><i class="fas fa-headset"></i> Technical Support</a></li>
-                <li><a href="social.html"><i class="fas fa-hashtag"></i> Social Media</a></li>
-            </ul>
-        </div>
-        
-        <div class="sitemap-section">
-            <h2>Legal Pages</h2>
-            <ul class="page-list">
-                <li><a href="privacy.html"><i class="fas fa-lock"></i> Privacy Policy</a></li>
-                <li><a href="terms.html"><i class="fas fa-gavel"></i> Terms & Conditions</a></li>
-                <li><a href="cookies.html"><i class="fas fa-cookie"></i> Cookie Policy</a></li>
-                <li><a href="disclaimer.html"><i class="fas fa-exclamation-circle"></i> Disclaimer</a></li>
-            </ul>
-        </div>
-        
-        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Solar812 Website</a>
-    </div>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://op812.github.io/SOLAR812/</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/specifications.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/features.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/gallery.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/order.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/contact.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/privacy.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://op812.github.io/SOLAR812/sitemap.html</loc>
+    <lastmod>2025-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>
