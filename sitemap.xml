@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar812 | Sitemap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --black: #000000;
@@ -114,7 +115,6 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -123,63 +123,63 @@
         <div class="sitemap-section">
             <h2>Main Pages</h2>
             <ul class="page-list">
-                <li><a href="#home"><i class="fas fa-home"></i> Homepage</a></li>
-                <li><a href="#features"><i class="fas fa-star"></i> Features</a></li>
-                <li><a href="#product"><i class="fas fa-solar-panel"></i> Product Details</a></li>
-                <li><a href="#order"><i class="fas fa-shopping-cart"></i> Order Now</a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
+                <li><a href="index.html#home"><i class="fas fa-home"></i> Homepage</a></li>
+                <li><a href="index.html#features"><i class="fas fa-star"></i> Features</a></li>
+                <li><a href="index.html#product"><i class="fas fa-solar-panel"></i> Product Details</a></li>
+                <li><a href="index.html#order"><i class="fas fa-shopping-cart"></i> Order Now</a></li>
+                <li><a href="index.html#about"><i class="fas fa-info-circle"></i> About Us</a></li>
             </ul>
         </div>
         
         <div class="sitemap-section">
             <h2>Product Information</h2>
             <ul class="page-list">
-                <li><a href="#product-specs"><i class="fas fa-list-alt"></i> Technical Specifications</a></li>
-                <li><a href="#product-features"><i class="fas fa-bolt"></i> Key Features</a></li>
-                <li><a href="#product-gallery"><i class="fas fa-images"></i> Product Gallery</a></li>
-                <li><a href="#product-compatibility"><i class="fas fa-mobile-alt"></i> Device Compatibility</a></li>
+                <li><a href="specifications.html"><i class="fas fa-list-alt"></i> Technical Specifications</a></li>
+                <li><a href="features.html"><i class="fas fa-bolt"></i> Key Features</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Product Gallery</a></li>
+                <li><a href="compatibility.html"><i class="fas fa-mobile-alt"></i> Device Compatibility</a></li>
             </ul>
         </div>
         
         <div class="sitemap-section">
             <h2>Order Process</h2>
             <ul class="page-list">
-                <li><a href="#order-form"><i class="fas fa-file-alt"></i> Order Form</a></li>
-                <li><a href="#payment-options"><i class="fas fa-credit-card"></i> Payment Options</a></li>
-                <li><a href="#shipping-info"><i class="fas fa-truck"></i> Shipping Information</a></li>
-                <li><a href="#delivery-times"><i class="fas fa-calendar-alt"></i> Delivery Times</a></li>
-                <li><a href="#return-policy"><i class="fas fa-exchange-alt"></i> Return Policy</a></li>
+                <li><a href="order.html"><i class="fas fa-file-alt"></i> Order Form</a></li>
+                <li><a href="payment.html"><i class="fas fa-credit-card"></i> Payment Options</a></li>
+                <li><a href="shipping.html"><i class="fas fa-truck"></i> Shipping Information</a></li>
+                <li><a href="delivery.html"><i class="fas fa-calendar-alt"></i> Delivery Times</a></li>
+                <li><a href="returns.html"><i class="fas fa-exchange-alt"></i> Return Policy</a></li>
             </ul>
         </div>
         
         <div class="sitemap-section">
             <h2>Company Information</h2>
             <ul class="page-list">
-                <li><a href="#about-story"><i class="fas fa-history"></i> Our Story</a></li>
-                <li><a href="#about-mission"><i class="fas fa-bullseye"></i> Our Mission</a></li>
-                <li><a href="#about-founder"><i class="fas fa-user"></i> Founder Profile</a></li>
-                <li><a href="#about-values"><i class="fas fa-heart"></i> Our Values</a></li>
+                <li><a href="story.html"><i class="fas fa-history"></i> Our Story</a></li>
+                <li><a href="mission.html"><i class="fas fa-bullseye"></i> Our Mission</a></li>
+                <li><a href="founder.html"><i class="fas fa-user"></i> Founder Profile</a></li>
+                <li><a href="values.html"><i class="fas fa-heart"></i> Our Values</a></li>
             </ul>
         </div>
         
         <div class="sitemap-section">
             <h2>Support & Contact</h2>
             <ul class="page-list">
-                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
-                <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
-                <li><a href="#warranty"><i class="fas fa-shield-alt"></i> Warranty Information</a></li>
-                <li><a href="#tech-support"><i class="fas fa-headset"></i> Technical Support</a></li>
-                <li><a href="#social-media"><i class="fas fa-hashtag"></i> Social Media</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+                <li><a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                <li><a href="warranty.html"><i class="fas fa-shield-alt"></i> Warranty Information</a></li>
+                <li><a href="support.html"><i class="fas fa-headset"></i> Technical Support</a></li>
+                <li><a href="social.html"><i class="fas fa-hashtag"></i> Social Media</a></li>
             </ul>
         </div>
         
         <div class="sitemap-section">
             <h2>Legal Pages</h2>
             <ul class="page-list">
-                <li><a href="#privacy-policy"><i class="fas fa-lock"></i> Privacy Policy</a></li>
-                <li><a href="#terms-conditions"><i class="fas fa-gavel"></i> Terms & Conditions</a></li>
-                <li><a href="#cookie-policy"><i class="fas fa-cookie"></i> Cookie Policy</a></li>
-                <li><a href="#disclaimer"><i class="fas fa-exclamation-circle"></i> Disclaimer</a></li>
+                <li><a href="privacy.html"><i class="fas fa-lock"></i> Privacy Policy</a></li>
+                <li><a href="terms.html"><i class="fas fa-gavel"></i> Terms & Conditions</a></li>
+                <li><a href="cookies.html"><i class="fas fa-cookie"></i> Cookie Policy</a></li>
+                <li><a href="disclaimer.html"><i class="fas fa-exclamation-circle"></i> Disclaimer</a></li>
             </ul>
         </div>
         
