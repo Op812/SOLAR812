@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar812 | Premium Solar Chargers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --black: #000000;
             --dark-bg: #0A0A0A;
             --gold: #D4AF37;
             --light-gold: #F1E5AC;
+            --dark-gold: #B8860B;
             --white: #FFFFFF;
+            --gray: #777777;
         }
         
         * {
@@ -24,6 +27,7 @@
             background-color: var(--dark-bg);
             color: var(--white);
             line-height: 1.6;
+            padding-top: 80px; /* Account for fixed header */
         }
         
         .container {
@@ -35,9 +39,15 @@
         
         /* Header Styles */
         header {
-            background-color: var(--black);
-            padding: 20px 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            padding: 15px 0;
             border-bottom: 2px solid var(--gold);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
         }
         
         .header-content {
@@ -52,11 +62,12 @@
         }
         
         .logo-text {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             color: var(--gold);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
         
         .logo-subtext {
@@ -66,73 +77,187 @@
             letter-spacing: 3px;
         }
         
+        /* Gold Navigation Bar */
+        .gold-nav {
+            display: flex;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            padding: 0;
+            justify-content: center;
+            border-bottom: 2px solid var(--dark-gold);
+            position: sticky;
+            top: 80px;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .nav-container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .gold-nav a {
+            color: var(--black);
+            text-decoration: none;
+            padding: 15px 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gold-nav a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: all 0.5s ease;
+        }
+        
+        .gold-nav a:hover:before {
+            left: 100%;
+        }
+        
+        .gold-nav a:hover {
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--black);
+        }
+        
+        .gold-nav a.active {
+            background: var(--black);
+            color: var(--gold);
+        }
+        
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%230A0A0A" width="100" height="100"/><path fill="%231A1A1A" d="M0 0h100v100H0z"/></svg>');
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%230A0A0A" width="100" height="100"/><path fill="%231A1A1A" d="M0 0h100v100H0z"/></svg>');
             background-size: cover;
-            padding: 100px 0;
+            padding: 150px 0 100px;
             text-align: center;
             border-bottom: 1px solid var(--gold);
+            position: relative;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, transparent 10%, var(--dark-bg) 90%);
+            pointer-events: none;
         }
         
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             margin-bottom: 20px;
             color: var(--gold);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+            position: relative;
         }
         
         .hero p {
-            font-size: 20px;
+            font-size: 22px;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
             color: var(--light-gold);
         }
         
         .cta-button {
             display: inline-block;
-            background-color: var(--gold);
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
             color: var(--black);
-            padding: 15px 40px;
+            padding: 18px 45px;
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 4px;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            transition: all 0.5s;
         }
         
         .cta-button:hover {
-            background-color: var(--light-gold);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6);
+        }
+        
+        .cta-button:hover:after {
+            left: 120%;
         }
         
         /* Features Section */
         .features {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--black);
+            position: relative;
+        }
+        
+        .features:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 40px;
             margin-bottom: 60px;
             color: var(--gold);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             position: relative;
         }
         
         .section-title:after {
             content: '';
             display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            margin: 15px auto;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto;
         }
         
         .feature-grid {
@@ -143,22 +268,42 @@
         
         .feature-card {
             background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 8px;
             text-align: center;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
             transition: transform 0.3s ease;
         }
         
         .feature-card:hover {
             transform: translateY(-10px);
             border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .feature-card:hover:before {
+            transform: scaleX(1);
         }
         
         .feature-icon {
-            font-size: 40px;
+            font-size: 50px;
             color: var(--gold);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
         }
         
         .feature-card h3 {
@@ -167,11 +312,26 @@
             color: var(--gold);
         }
         
+        .feature-card p {
+            color: var(--light-gold);
+        }
+        
         /* Product Section */
         .product {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--dark-bg);
             text-align: center;
+            position: relative;
+        }
+        
+        .product:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         
         .product-showcase {
@@ -179,7 +339,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 50px;
             margin-top: 40px;
         }
         
@@ -187,9 +347,34 @@
             flex: 1;
             min-width: 300px;
             background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .product-image-placeholder {
+            height: 300px;
+            background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 24px;
+            border: 2px dashed var(--dark-gold);
+            border-radius: 5px;
         }
         
         .product-info {
@@ -199,9 +384,10 @@
         }
         
         .product-info h3 {
-            font-size: 28px;
+            font-size: 32px;
             color: var(--gold);
             margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
         
         .product-info ul {
@@ -210,9 +396,10 @@
         }
         
         .product-info li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 15px;
+            padding-left: 30px;
             position: relative;
+            color: var(--light-gold);
         }
         
         .product-info li:before {
@@ -220,50 +407,85 @@
             color: var(--gold);
             position: absolute;
             left: 0;
+            font-size: 20px;
+            font-weight: bold;
         }
         
         .price {
-            font-size: 42px;
+            font-size: 48px;
             color: var(--gold);
-            margin: 20px 0;
+            margin: 30px 0;
             font-weight: bold;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
         
         /* Order Form Section */
         .order {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--black);
+            position: relative;
         }
         
-        .order-form {
+        .order:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        
+        .order-form-container {
             background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            padding: 40px;
-            border-radius: 8px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            max-width: 600px;
+            padding: 50px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            max-width: 700px;
             margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .order-form-container:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+        }
+        
+        .form-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: var(--gold);
         }
         
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--light-gold);
+            font-size: 16px;
         }
         
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.1);
+            padding: 18px;
+            background-color: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 4px;
             color: var(--white);
             font-size: 16px;
+            transition: all 0.3s ease;
         }
         
         .form-group input:focus,
@@ -271,32 +493,80 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .color-note {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .color-note p {
+            color: var(--light-gold);
+            font-size: 16px;
+        }
+        
+        .color-note p strong {
+            color: var(--gold);
         }
         
         .submit-button {
-            background-color: var(--gold);
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
             color: var(--black);
             border: none;
-            padding: 15px 40px;
+            padding: 18px 40px;
             font-size: 18px;
             font-weight: bold;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-button:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(30deg);
+            transition: all 0.5s;
         }
         
         .submit-button:hover {
-            background-color: var(--light-gold);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+        }
+        
+        .submit-button:hover:after {
+            left: 120%;
         }
         
         /* About Section */
         .about {
-            padding: 80px 0;
+            padding: 100px 0;
             background-color: var(--dark-bg);
             text-align: center;
+            position: relative;
+        }
+        
+        .about:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         
         .about-content {
@@ -307,24 +577,28 @@
         .about-text {
             margin-bottom: 40px;
             font-size: 18px;
+            color: var(--light-gold);
+            line-height: 1.8;
         }
         
         .founder {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-top: 50px;
         }
         
         .founder-image {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-color: #1a1a1a;
+            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
             border: 3px solid var(--gold);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
         
         .founder-initial {
@@ -333,36 +607,133 @@
             font-weight: bold;
         }
         
+        .founder h3 {
+            font-size: 24px;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        
         /* Footer */
         footer {
             background-color: var(--black);
-            padding: 40px 0;
+            padding: 60px 0 30px;
             text-align: center;
             border-top: 1px solid var(--gold);
+            position: relative;
         }
         
-        .contact-info {
-            margin-bottom: 20px;
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
         
-        .contact-info a {
-            color: var(--light-gold);
-            text-decoration: none;
-            margin: 0 10px;
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
         }
         
-        .contact-info a:hover {
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+            text-align: left;
+            padding: 0 20px;
+        }
+        
+        .footer-column h3 {
             color: var(--gold);
-            text-decoration: underline;
+            margin-bottom: 20px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: var(--light-gold);
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
         }
         
         .copyright {
             color: var(--light-gold);
             font-size: 14px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .gold-nav {
+                top: 70px;
+                flex-direction: column;
+                display: none;
+            }
+            
+            .gold-nav.active {
+                display: flex;
+            }
+            
+            .gold-nav a {
+                padding: 12px 20px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+            }
+            
             .hero h1 {
                 font-size: 36px;
             }
@@ -375,8 +746,12 @@
                 flex-direction: column;
             }
             
-            .order-form {
-                padding: 20px;
+            .order-form-container {
+                padding: 30px;
+            }
+            
+            .footer-column {
+                text-align: center;
             }
         }
     </style>
@@ -389,11 +764,25 @@
                 <div class="logo-text">Solar812</div>
                 <div class="logo-subtext">INFINITE POWER</div>
             </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
+    <!-- Gold Navigation Bar -->
+    <nav class="gold-nav" id="goldNav">
+        <div class="nav-container">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#product">Product</a>
+            <a href="#order">Order Now</a>
+            <a href="#about">About Us</a>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="container">
             <h1>Power Your World Responsibly</h1>
             <p>Experience the future of portable energy with our premium solar-powered charger. Never run out of power again while helping our planet.</p>
@@ -402,22 +791,22 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section id="features" class="features">
         <div class="container">
             <h2 class="section-title">Why Choose Solar812</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">☀️</div>
+                    <div class="feature-icon"><i class="fas fa-sun"></i></div>
                     <h3>Solar Powered</h3>
                     <p>Harness the sun's infinite energy to charge your devices anywhere, anytime. No electricity needed.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
                     <h3>Fast Charging</h3>
                     <p>Our advanced technology provides rapid charging that rivals traditional wall chargers.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌍</div>
+                    <div class="feature-icon"><i class="fas fa-globe"></i></div>
                     <h3>Eco Friendly</h3>
                     <p>Reduce your carbon footprint with clean, renewable energy. Help protect our planet.</p>
                 </div>
@@ -426,14 +815,14 @@
     </section>
 
     <!-- Product Section -->
-    <section class="product">
+    <section id="product" class="product">
         <div class="container">
             <h2 class="section-title">The Solar812 Power-Pod</h2>
             <div class="product-showcase">
                 <div class="product-image">
-                    <!-- Placeholder for product image -->
-                    <div style="height: 300px; background-color: #1a1a1a; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 20px;">
-                        Solar812 Power-Pod Image
+                    <div class="product-image-placeholder">
+                        <i class="fas fa-solar-panel" style="font-size: 48px; margin-right: 15px;"></i>
+                        Solar812 Power-Pod
                     </div>
                 </div>
                 <div class="product-info">
@@ -457,54 +846,59 @@
     <section id="order" class="order">
         <div class="container">
             <h2 class="section-title">Place Your Order</h2>
-            <form class="order-form" id="orderForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <label for="quantity">Quantity</label>
-                    <select id="quantity" name="quantity" required>
-                        <option value="1">1 Power-Pod</option>
-                        <option value="2">2 Power-Pods</option>
-                        <option value="3">3 Power-Pods</option>
-                        <option value="4">4 Power-Pods</option>
-                        <option value="5">5 Power-Pods</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="color">Color Preference</label>
-                    <select id="color" name="color" required>
-                        <option value="Solar Flare">Solar Flare (Orange)</option>
-                        <option value="Ocean Blue">Ocean Blue</option>
-                        <option value="Forest Green">Forest Green</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Special Requests or Questions</label>
-                    <textarea id="message" name="message" rows="4"></textarea>
-                </div>
-                <button type="submit" class="submit-button">Complete Order</button>
-            </form>
+            <div class="order-form-container">
+                <h3 class="form-title">Order Your Solar812 Power-Pod</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <select id="quantity" name="quantity" required>
+                            <option value="1">1 Power-Pod</option>
+                            <option value="2">2 Power-Pods</option>
+                            <option value="3">3 Power-Pods</option>
+                            <option value="4">4 Power-Pods</option>
+                            <option value="5">5 Power-Pods</option>
+                        </select>
+                    </div>
+                    
+                    <div class="color-note">
+                        <p><strong>Note:</strong> Please write your preferred color in the "Special Requests" box below. Available colors: Solar Flare (Orange), Ocean Blue, Forest Green.</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests (Please specify color here)</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Complete Order</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">Our Story</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p>Solar812 was founded by 12-year-old Osman Pasha from Hong Kong with a simple mission: to make clean energy accessible to everyone while helping protect our planet.</p>
                     <p>The name Solar812 represents infinite solar power (8) championed by a 12-year-old innovator. For every Solar812 product sold, we plant a tree to contribute to a greener future.</p>
+                    <p>Our products are designed with both performance and sustainability in mind. We believe that technology and ecology can work together to create a better tomorrow.</p>
                 </div>
                 <div class="founder">
                     <div class="founder-image">
@@ -520,9 +914,31 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="contact-info">
-                <a href="mailto:pashao1@wis.edu.hk">pashao1@wis.edu.hk</a>
-                <a href="tel:+85290989090">+852 9098 9090</a>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Solar812</h3>
+                    <p>Harnessing the power of the sun to create a sustainable future for all.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> pashao1@wis.edu.hk</p>
+                    <p><i class="fas fa-phone"></i> +852 9098 9090</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hong Kong</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#product">Product</a>
+                    <a href="#order">Order Now</a>
+                    <a href="#about">About Us</a>
+                </div>
             </div>
             <div class="copyright">
                 &copy; 2023 Solar812 by Osman Pasha. All rights reserved.
@@ -531,6 +947,35 @@
     </footer>
 
     <script>
+        // Navigation functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const goldNav = document.getElementById('goldNav');
+        
+        menuToggle.addEventListener('click', function() {
+            goldNav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.gold-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 140,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu after clicking
+                if (window.innerWidth <= 768) {
+                    goldNav.classList.remove('active');
+                }
+            });
+        });
+        
+        // Order form functionality
         document.getElementById('orderForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -538,8 +983,8 @@
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
             const quantity = document.getElementById('quantity').value;
-            const color = document.getElementById('color').value;
             const message = document.getElementById('message').value;
             
             // Create email content
@@ -548,9 +993,9 @@
 Name: ${name}
 Email: ${email}
 Phone: ${phone}
+Delivery Address: ${address}
 Quantity: ${quantity}
-Color: ${color}
-Message: ${message}
+Special Requests: ${message}
             `;
             
             // Open mail client
@@ -558,6 +1003,28 @@ Message: ${message}
             
             // Show confirmation message
             alert('Thank you for your order! Your email client will open to confirm your order details. Please send the pre-filled email to complete your order.');
+        });
+        
+        // Highlight active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.gold-nav a');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
