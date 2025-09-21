@@ -7,45 +7,9 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://op812.github.io/SOLAR812/specifications.html</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://op812.github.io/SOLAR812/features.html</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://op812.github.io/SOLAR812/gallery.html</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://op812.github.io/SOLAR812/order.html</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://op812.github.io/SOLAR812/contact.html</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://op812.github.io/SOLAR812/privacy.html</loc>
-    <lastmod>2025-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://op812.github.io/SOLAR812/sitemap.html</loc>
     <lastmod>2025-09-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <priority>0.5</priority>
   </url>
 </urlset>
